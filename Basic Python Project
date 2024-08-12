@@ -1,0 +1,2067 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "7261224c",
+   "metadata": {},
+   "source": [
+    "<div style=\"border:solid green 2px; padding: 20px\"> <h1 style=\"color:green; margin-bottom:20px\">Reviewer's comment v1</h1>\n",
+    "\n",
+    "Hello Mohamad, my name is Dmitrii. I'm going to review your project! Nice to meet you! 🙌\n",
+    "\n",
+    "You can find my comments under the heading **«Review»**. I will categorize my comments in green, blue or red boxes like this:\n",
+    "\n",
+    "<div class=\"alert alert-success\">\n",
+    "    <b>Success:</b> if everything is done successfully\n",
+    "</div>\n",
+    "<div class=\"alert alert-warning\">\n",
+    "    <b>Remarks:</b> if I can give some recommendations or ways to improve the project\n",
+    "   \n",
+    "</div>\n",
+    "<div class=\"alert alert-danger\">\n",
+    "    <b>Needs fixing:</b> if the block requires some corrections. Work can't be accepted with the red comments\n",
+    "</div>\n",
+    "\n",
+    "Please don't remove my comments :) If you have any questions don't hesitate to respond to my comments in a different section. \n",
+    "<div class=\"alert alert-info\"> <b>Student comments:</b> For example like this</div>   \n",
+    "   "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "dbfbd7ad",
+   "metadata": {},
+   "source": [
+    "<div style=\"border:solid green 2px; padding: 20px\">\n",
+    "<b>Reviewer's comment v1:</b>\n",
+    "    \n",
+    "<b>Overall Feedback</b> \n",
+    "    \n",
+    "- Overall well done! I can see that a lot of effort has been made! Your project looks very good and you accomplished impressive results.\n",
+    "- However, there are some comments/areas left to fix (in red boxes with the title - Reviewer's comment v1:). \n",
+    "    \n",
+    "And of course, if you have any questions along the way, remember that you can always reach out to your tutor for any clarification.\n",
+    "    \n",
+    "I will wait for you to send me a new version of the project :)\n",
+    "\n",
+    "    \n",
+    "</div>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "dc8fa2c2",
+   "metadata": {},
+   "source": [
+    "<div style=\"border:solid green 2px; padding: 20px\">\n",
+    "<b>Reviewer's comment v2:</b>\n",
+    "    \n",
+    "<b>Overall Feedback</b> \n",
+    "\n",
+    "Thank you for making changes to your project! Could you please take a look at additional comments with the title - Reviewer's comment v2?\n",
+    "    \n",
+    "And of course, if you have any questions along the way, remember that you can always reach out to your tutor for any clarification.\n",
+    "\n",
+    "I will wait for you to send me a new version of the project :)\n",
+    "</div>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ac49a19b",
+   "metadata": {},
+   "source": [
+    "<div style=\"border:solid green 2px; padding: 20px\">\n",
+    "<b>Reviewer's comment v3:</b>\n",
+    "    \n",
+    "<b>Overall Feedback</b> \n",
+    "\n",
+    "Thank you for making all improvements in your project! It looks perfect now and there are no critical issues. \n",
+    "    \n",
+    "Please keep up great work and don't hesitate to use this project as a reference in your future sprints. \n",
+    "   \n",
+    "Good luck on the next project 🍀 \n",
+    "</div>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f85a80d2",
+   "metadata": {},
+   "source": [
+    "## Basic Python - Project <a id='intro'></a>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a1262df4",
+   "metadata": {},
+   "source": [
+    "#### Introduction <a id='intro'></a>\n",
+    "In this project, you will work with data from the entertainment industry. You will study a dataset with records on movies and shows. The research will focus on the \"Golden Age\" of television, which began in 1999 with the release of *The Sopranos* and is still ongoing.\n",
+    "\n",
+    "The aim of this project is to investigate how the number of votes a title receives impacts its ratings. The assumption is that highly-rated shows (we will focus on TV shows, ignoring movies) released during the \"Golden Age\" of television also have the most votes.\n",
+    "\n",
+    "### Stages \n",
+    "Data on movies and shows is stored in the `/datasets/movies_and_shows.csv` file. There is no information about the quality of the data, so you will need to explore it before doing the analysis.\n",
+    "\n",
+    "First, you'll evaluate the quality of the data and see whether its issues are significant. Then, during data preprocessing, you will try to account for the most critical problems.\n",
+    " \n",
+    "Your project will consist of three stages:\n",
+    " 1. Data overview\n",
+    " 2. Data preprocessing\n",
+    " 3. Data analysis"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2fdce3b6",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-success\">\n",
+    "<b>Reviewer's comment v1:</b>\n",
+    "    \n",
+    "It is always helpful for the reader to have additional information about project tasks. It gives an overview of what you are going to achieve in this project.\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ac0593ac",
+   "metadata": {},
+   "source": [
+    "## Stage 1. Data overview <a id='data_review'></a>\n",
+    "\n",
+    "Open and explore the data."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e86ed00e",
+   "metadata": {},
+   "source": [
+    "You'll need `pandas`, so import it."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "1727d3f8",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9eac6350",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-success\">\n",
+    "<b>Reviewer's comment v1:</b>\n",
+    "    \n",
+    "Well done! Required library has been imported."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9821beeb",
+   "metadata": {},
+   "source": [
+    "Read the `movies_and_shows.csv` file from the `datasets` folder and save it in the `df` variable:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "fc5a1402",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "try: \n",
+    "    df = pd.read_csv(\"/datasets/movies_and_shows.csv\")\n",
+    "except:\n",
+    "    df = pd.read_csv(server_path['orders'], sep=';')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6085e9c7",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-block alert-warning\">\n",
+    "<b>Reviewer's comment v1</b>\n",
+    " \n",
+    "Everything is correct here; however it's a good practice to use `try/except blocks` when performing file operations or other tasks that might fail due to external reasons, such as the file not being present, issues with file permissions, or incorrect file formats. This way, you can handle errors gracefully and provide a more user-friendly error message, rather than having the program crash unexpectedly.\n",
+    "\n",
+    "Here's how you can implement it:\n",
+    "\n",
+    "```\n",
+    "try:\n",
+    "    orders = pd.read_csv(local_path['orders'], sep=';')\n",
+    "\n",
+    "except FileNotFoundError:\n",
+    "    orders = pd.read_csv(server_path['orders'], sep=';')\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1cd0a96d",
+   "metadata": {},
+   "source": [
+    "Print the first 10 table rows:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "d03a6bbd",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "              name                      Character   r0le        TITLE   Type  \\\n",
+      "0   Robert De Niro                  Travis Bickle  ACTOR  Taxi Driver  MOVIE   \n",
+      "1     Jodie Foster                  Iris Steensma  ACTOR  Taxi Driver  MOVIE   \n",
+      "2    Albert Brooks                            Tom  ACTOR  Taxi Driver  MOVIE   \n",
+      "3    Harvey Keitel        Matthew 'Sport' Higgins  ACTOR  Taxi Driver  MOVIE   \n",
+      "4  Cybill Shepherd                          Betsy  ACTOR  Taxi Driver  MOVIE   \n",
+      "5      Peter Boyle                         Wizard  ACTOR  Taxi Driver  MOVIE   \n",
+      "6   Leonard Harris      Senator Charles Palantine  ACTOR  Taxi Driver  MOVIE   \n",
+      "7   Diahnne Abbott                Concession Girl  ACTOR  Taxi Driver  MOVIE   \n",
+      "8      Gino Ardito             Policeman at Rally  ACTOR  Taxi Driver  MOVIE   \n",
+      "9  Martin Scorsese  Passenger Watching Silhouette  ACTOR  Taxi Driver  MOVIE   \n",
+      "\n",
+      "   release Year              genres  imdb sc0re  imdb v0tes  \n",
+      "0          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "1          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "2          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "3          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "4          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "5          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "6          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "7          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "8          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "9          1976  ['drama', 'crime']         8.2    808582.0  \n"
+     ]
+    }
+   ],
+   "source": [
+    "print(df.head(10))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e579aa91",
+   "metadata": {},
+   "source": [
+    "Obtain the general information about the table with one command:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "7bf66d2a",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'pandas.core.frame.DataFrame'>\n",
+      "RangeIndex: 85579 entries, 0 to 85578\n",
+      "Data columns (total 9 columns):\n",
+      " #   Column        Non-Null Count  Dtype  \n",
+      "---  ------        --------------  -----  \n",
+      " 0      name       85579 non-null  object \n",
+      " 1   Character     85579 non-null  object \n",
+      " 2   r0le          85579 non-null  object \n",
+      " 3   TITLE         85578 non-null  object \n",
+      " 4     Type        85579 non-null  object \n",
+      " 5   release Year  85579 non-null  int64  \n",
+      " 6   genres        85579 non-null  object \n",
+      " 7   imdb sc0re    80970 non-null  float64\n",
+      " 8   imdb v0tes    80853 non-null  float64\n",
+      "dtypes: float64(2), int64(1), object(6)\n",
+      "memory usage: 5.9+ MB\n",
+      "None\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(df.info())\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "e91f62a7",
+   "metadata": {},
+   "source": [
+    "The table contains nine columns. The majority store the same data type: object. The only exceptions are `'release Year'` (int64 type), `'imdb sc0re'` (float64 type) and `'imdb v0tes'` (float64 type). Scores and votes will be used in our analysis, so it's important to verify that they are present in the dataframe in the appropriate numeric format. Three columns (`'TITLE'`, `'imdb sc0re'` and `'imdb v0tes'`) have missing values.\n",
+    "\n",
+    "According to the documentation:\n",
+    "- `'name'` — actor/director's name and last name\n",
+    "- `'Character'` — character played (for actors)\n",
+    "- `'r0le '` — the person's contribution to the title (it can be in the capacity of either actor or director)\n",
+    "- `'TITLE '` — title of the movie (show)\n",
+    "- `'  Type'` — show or movie\n",
+    "- `'release Year'` — year when movie (show) was released\n",
+    "- `'genres'` — list of genres under which the movie (show) falls\n",
+    "- `'imdb sc0re'` — score on IMDb\n",
+    "- `'imdb v0tes'` — votes on IMDb\n",
+    "\n",
+    "We can see three issues with the column names:\n",
+    "1. Some names are uppercase, while others are lowercase.\n",
+    "2. There are names containing whitespace.\n",
+    "3. A few column names have digit '0' instead of letter 'o'. \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bacaef30",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-success\">\n",
+    "<b>Reviewer's comment v1:</b>\n",
+    "    \n",
+    "Great data overview and correct conclusions. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "4355de7b",
+   "metadata": {},
+   "source": [
+    "### Conclusions <a id='data_review_conclusions'></a> \n",
+    "\n",
+    "Each row in the table stores data about a movie or show. The columns can be divided into two categories: the first is about the roles held by different people who worked on the movie or show (role, name of the actor or director, and character if the row is about an actor); the second category is information about the movie or show itself (title, release year, genre, imdb figures).\n",
+    "\n",
+    "It's clear that there is sufficient data to do the analysis and evaluate our assumption. However, to move forward, we need to preprocess the data."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "42792d9d",
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "                   ___name                  character      r0le  \\\n",
+      "7561         Philip Greene  Baseball Fan (uncredited)     ACTOR   \n",
+      "14512             Dan Levy                   Reporter     ACTOR   \n",
+      "18952     Nicolas Le Nev??                    unknown  DIRECTOR   \n",
+      "22456    John Iii Franklin                    Himself     ACTOR   \n",
+      "29557         Claudio Roca                   Nicol?­s     ACTOR   \n",
+      "...                    ...                        ...       ...   \n",
+      "85569       Jessica Cediel            Liliana Navarro     ACTOR   \n",
+      "85570  Javier Gardeaz?­bal   Agust??n \"Peluca\" Ort??z     ACTOR   \n",
+      "85571        Carla Giraldo             Valery Reinoso     ACTOR   \n",
+      "85572  Ana Mar??a S?­nchez                    Lourdes     ACTOR   \n",
+      "85577         Isabel Gaona                     Cacica     ACTOR   \n",
+      "\n",
+      "                                 title __type  release_year  \\\n",
+      "7561                   How Do You Know  MOVIE          2010   \n",
+      "14512  A Very Harold & Kumar Christmas  MOVIE          2011   \n",
+      "18952                       Sammy & Co   SHOW          2014   \n",
+      "22456                    Last Chance U   SHOW          2016   \n",
+      "29557                   Narcos: Mexico   SHOW          2018   \n",
+      "...                                ...    ...           ...   \n",
+      "85569                          Lokillo  MOVIE          2021   \n",
+      "85570                          Lokillo  MOVIE          2021   \n",
+      "85571                          Lokillo  MOVIE          2021   \n",
+      "85572                          Lokillo  MOVIE          2021   \n",
+      "85577                          Lokillo  MOVIE          2021   \n",
+      "\n",
+      "                                 genres  imdb_sc0re  imdb_v0tes  \n",
+      "7561     ['comedy', 'drama', 'romance']         5.4     50383.0  \n",
+      "14512  ['comedy', 'fantasy', 'romance']         6.2     69562.0  \n",
+      "18952         ['animation', 'european']         5.7        31.0  \n",
+      "22456        ['documentation', 'sport']         8.4      6897.0  \n",
+      "29557                ['drama', 'crime']         8.4     82042.0  \n",
+      "...                                 ...         ...         ...  \n",
+      "85569                        ['comedy']         3.8        68.0  \n",
+      "85570                        ['comedy']         3.8        68.0  \n",
+      "85571                        ['comedy']         3.8        68.0  \n",
+      "85572                        ['comedy']         3.8        68.0  \n",
+      "85577                        ['comedy']         3.8        68.0  \n",
+      "\n",
+      "[7675 rows x 9 columns]\n"
+     ]
+    }
+   ],
+   "source": [
+    "df.columns = df.columns.str.lower().str.replace(' ' , '_')\n",
+    "duplicates = df[df.duplicated()]\n",
+    "print(duplicates)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "83ca69e3",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-danger\">\n",
+    "<b>Reviewer's comment v1:</b>\n",
+    "    \n",
+    "I've noticed that you're importing pandas as pd in every cell of your notebook. It's great that you're making sure you have access to pandas for your data manipulation tasks. However, in Jupyter notebooks, you only need to import a library once at the beginning of your notebook, and it will be available throughout all the cells in that notebook session. This practice not only keeps your code cleaner and more organized but also helps in reducing redundancy and making your notebook easier to read and follow for others.\n",
+    "\n",
+    "Here's a pro tip: place all your import statements in the first cell (or at the beginning of your notebook). This way, you and others can easily see which libraries are being used throughout your notebook. Plus, it's a common convention followed by the data science community, which aids in maintaining a standardized structure across projects.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "eafb087f",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-success\">\n",
+    "<b>Reviewer's comment v2:</b>\n",
+    "    \n",
+    "Thank you for removing duplicate lines of code."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "9c850d13",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['___name', 'character', 'r0le', 'title', '__type', 'release_year', 'genres', 'imdb_sc0re', 'imdb_v0tes']\n"
+     ]
+    }
+   ],
+   "source": [
+    "column_names = df.columns.tolist()\n",
+    "print(column_names)\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "b1399433",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "                     name                character      role        title  \\\n",
+      "0          Robert De Niro            Travis Bickle     ACTOR  Taxi Driver   \n",
+      "1            Jodie Foster            Iris Steensma     ACTOR  Taxi Driver   \n",
+      "2           Albert Brooks                      Tom     ACTOR  Taxi Driver   \n",
+      "3           Harvey Keitel  Matthew 'Sport' Higgins     ACTOR  Taxi Driver   \n",
+      "4         Cybill Shepherd                    Betsy     ACTOR  Taxi Driver   \n",
+      "...                   ...                      ...       ...          ...   \n",
+      "85574    Adelaida Buscato               Mar??a Paz     ACTOR      Lokillo   \n",
+      "85575  Luz Stella Luengas             Karen Bayona     ACTOR      Lokillo   \n",
+      "85576        In??s Prieto                    Fanny     ACTOR      Lokillo   \n",
+      "85577        Isabel Gaona                   Cacica     ACTOR      Lokillo   \n",
+      "85578      Julian Gaviria                  unknown  DIRECTOR      Lokillo   \n",
+      "\n",
+      "            type  release_year              genres  imdb_score  imdb_votes  \n",
+      "0          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "1          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "2          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "3          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "4          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "...          ...           ...                 ...         ...         ...  \n",
+      "85574  the movie          2021          ['comedy']         3.8        68.0  \n",
+      "85575  the movie          2021          ['comedy']         3.8        68.0  \n",
+      "85576  the movie          2021          ['comedy']         3.8        68.0  \n",
+      "85577      MOVIE          2021          ['comedy']         3.8        68.0  \n",
+      "85578  the movie          2021          ['comedy']         3.8        68.0  \n",
+      "\n",
+      "[85579 rows x 9 columns]\n"
+     ]
+    }
+   ],
+   "source": [
+    "df = df.rename(columns=\n",
+    "{ '___name': 'name',\n",
+    "    'character': 'character',\n",
+    "    'r0le': 'role',\n",
+    "    'title': 'title',\n",
+    "    '__type': 'type',\n",
+    "    'release_year': 'release_year',\n",
+    "    'genres': 'genres',\n",
+    "    'imdb_sc0re': 'imdb_score',\n",
+    "    'imdb_v0tes': 'imdb_votes'}\n",
+    ")\n",
+    "print(df)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "23a1dc11",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Index(['name', 'character', 'role', 'title', 'type', 'release_year', 'genres',\n",
+      "       'imdb_score', 'imdb_votes'],\n",
+      "      dtype='object')\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(df.columns)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "464fbd04",
+   "metadata": {},
+   "source": [
+    "Check the result. Print the names of the columns once more:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "0eb6527f",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "                     name                character      role        title  \\\n",
+      "0          Robert De Niro            Travis Bickle     ACTOR  Taxi Driver   \n",
+      "1            Jodie Foster            Iris Steensma     ACTOR  Taxi Driver   \n",
+      "2           Albert Brooks                      Tom     ACTOR  Taxi Driver   \n",
+      "3           Harvey Keitel  Matthew 'Sport' Higgins     ACTOR  Taxi Driver   \n",
+      "4         Cybill Shepherd                    Betsy     ACTOR  Taxi Driver   \n",
+      "...                   ...                      ...       ...          ...   \n",
+      "85574    Adelaida Buscato               Mar??a Paz     ACTOR      Lokillo   \n",
+      "85575  Luz Stella Luengas             Karen Bayona     ACTOR      Lokillo   \n",
+      "85576        In??s Prieto                    Fanny     ACTOR      Lokillo   \n",
+      "85577        Isabel Gaona                   Cacica     ACTOR      Lokillo   \n",
+      "85578      Julian Gaviria                  unknown  DIRECTOR      Lokillo   \n",
+      "\n",
+      "            type  release_year              genres  imdb_score  imdb_votes  \n",
+      "0          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "1          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "2          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "3          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "4          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+      "...          ...           ...                 ...         ...         ...  \n",
+      "85574  the movie          2021          ['comedy']         3.8        68.0  \n",
+      "85575  the movie          2021          ['comedy']         3.8        68.0  \n",
+      "85576  the movie          2021          ['comedy']         3.8        68.0  \n",
+      "85577      MOVIE          2021          ['comedy']         3.8        68.0  \n",
+      "85578  the movie          2021          ['comedy']         3.8        68.0  \n",
+      "\n",
+      "[85579 rows x 9 columns]\n"
+     ]
+    }
+   ],
+   "source": [
+    "df = df.rename(columns={\n",
+    "        '   name' : 'name',\n",
+    "        'Character' : 'character',\n",
+    "        'r0le' : 'role',\n",
+    "        'TITLE' : 'title',\n",
+    "        '  Type' : 'type',\n",
+    "        'release Year' : 'release_year',\n",
+    "        'imdb sc0re' : 'imdb_score',\n",
+    "        'imdb v0tes' : 'imdb_votes',}\n",
+    ")\n",
+    "print(df)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "69c5e710",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-warning\">\n",
+    "<b>Reviewer's comment v1</b>\n",
+    "    \n",
+    "Everything is correct here, as a second approach you could also use `rename` function here: \n",
+    "    \n",
+    "```\n",
+    "df = df.rename(\n",
+    "    columns={\n",
+    "        '   name': 'name',\n",
+    "        'Character': 'character',\n",
+    "        'r0le': 'role',\n",
+    "        'TITLE': 'title',\n",
+    "        '  Type': 'type',\n",
+    "        'release Year': 'release_year',\n",
+    "        'imdb sc0re': 'imdb_score',\n",
+    "        'imdb v0tes': 'imdb_votes',\n",
+    "        \n",
+    "    }\n",
+    ")\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "14d9c319",
+   "metadata": {},
+   "source": [
+    "### Missing values <a id='missing_values'></a>\n",
+    "First, find the number of missing values in the table. To do so, combine two `pandas` methods:"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "29c4a8e1",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-danger\">\n",
+    "<b>Reviewer's comment v1</b>\n",
+    "    \n",
+    "I've observed that you're loading the dataset `movies_and_shows.csv` into a DataFrame using `df = pd.read_csv(\"/datasets/movies_and_shows.csv\")` in multiple cells throughout your notebook. While it's crucial to ensure your data is correctly loaded, doing this step repeatedly, especially after applying some data transformations, can lead to unnecessary repetition and potentially undo the transformations you've applied earlier.\n",
+    "\n",
+    "In Jupyter notebooks, once you've loaded your data into a DataFrame, you can continue to use and transform that DataFrame across different cells without needing to reload it. This approach not only saves computational resources but also keeps your data's state consistent with the transformations you apply. If you’re experimenting and want to start from the original data again, consider reloading the dataset in a specific cell where you intend to restart your analysis, or better yet, use a different notebook cell to apply new transformations while keeping the original data load cell intact for reference.\n",
+    "\n",
+    "Here's a suggestion: Load your dataset once at the beginning of your analysis. For subsequent operations or analyses, just refer to the DataFrame (`df` in your case) directly. If you need to revert to the original data, you can do so in a controlled manner by reloading it in a new cell, but ideally, this should be kept to a minimum to maintain clarity and efficiency in your workflow.\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "21c427f2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "9336\n"
+     ]
+    }
+   ],
+   "source": [
+    "total_missing_values = df.isnull().sum().sum()\n",
+    "print(total_missing_values)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c8272df3",
+   "metadata": {},
+   "source": [
+    "Not all missing values affect the research: the single missing value in `'title'` is not critical. The missing values in columns `'imdb_score'` and `'imdb_votes'` represent around 6% of all records (4,609 and 4,726, respectively, of the total 85,579). This could potentially affect our research. To avoid this issue, we will drop rows with missing values in the `'imdb_score'` and `'imdb_votes'` columns."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "599d5550",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "name               0\n",
+      "character          0\n",
+      "role               0\n",
+      "title              1\n",
+      "type               0\n",
+      "release_year       0\n",
+      "genres             0\n",
+      "imdb_score      4609\n",
+      "imdb_votes      4726\n",
+      "dtype: int64\n"
+     ]
+    }
+   ],
+   "source": [
+    "print(df.isna().sum())\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1809a4f5",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-danger\">\n",
+    "<b>Reviewer's comment v2</b>\n",
+    "    \n",
+    "Going back to my previous comment the code above overwrites your previous transformations (e.g. changing column names).\n",
+    "\n",
+    "Could you please remove duplicate imports and data load."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ac6bf20d",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-success\">\n",
+    "<b>Reviewer's comment v1</b>\n",
+    "    \n",
+    "Great that you selected `isna()` method to find missing values! \n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2156887f",
+   "metadata": {},
+   "source": [
+    "Make sure the table doesn't contain any more missing values. Count the missing values again."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "55c0b0ce",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "None\n"
+     ]
+    }
+   ],
+   "source": [
+    "missing_values_per_column = df.dropna(inplace = True)\n",
+    "print(missing_values_per_column)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b1513342",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-danger\">\n",
+    "<b>Reviewer's comment v1</b>\n",
+    "    \n",
+    "Could you please remove missing values before proceeding? For that you can use `df.isna().sum()`"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "01a7f621",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-danger\">\n",
+    "<b>Reviewer's comment v2</b>\n",
+    "    \n",
+    "You could remove missing values in the following way: `df.dropna(inplace = True)`"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f06e6d01",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-success\">\n",
+    "<b>Reviewer's comment v3</b>\n",
+    "    \n",
+    "Thank you for fixing that. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a7dc7aa0",
+   "metadata": {},
+   "source": [
+    "### Duplicates <a id='duplicates'></a>\n",
+    "Find the number of duplicate rows in the table using one command:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "9227df01",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "6994"
+      ]
+     },
+     "execution_count": 13,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df.duplicated().sum()\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5f6eb0fc",
+   "metadata": {},
+   "source": [
+    "Review the duplicate rows to determine if removing them would distort our dataset."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "bcf32fcb",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>name</th>\n",
+       "      <th>character</th>\n",
+       "      <th>role</th>\n",
+       "      <th>title</th>\n",
+       "      <th>type</th>\n",
+       "      <th>release_year</th>\n",
+       "      <th>genres</th>\n",
+       "      <th>imdb_score</th>\n",
+       "      <th>imdb_votes</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>85569</th>\n",
+       "      <td>Jessica Cediel</td>\n",
+       "      <td>Liliana Navarro</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Lokillo</td>\n",
+       "      <td>MOVIE</td>\n",
+       "      <td>2021</td>\n",
+       "      <td>['comedy']</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>68.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>85570</th>\n",
+       "      <td>Javier Gardeaz?­bal</td>\n",
+       "      <td>Agust??n \"Peluca\" Ort??z</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Lokillo</td>\n",
+       "      <td>MOVIE</td>\n",
+       "      <td>2021</td>\n",
+       "      <td>['comedy']</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>68.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>85571</th>\n",
+       "      <td>Carla Giraldo</td>\n",
+       "      <td>Valery Reinoso</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Lokillo</td>\n",
+       "      <td>MOVIE</td>\n",
+       "      <td>2021</td>\n",
+       "      <td>['comedy']</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>68.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>85572</th>\n",
+       "      <td>Ana Mar??a S?­nchez</td>\n",
+       "      <td>Lourdes</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Lokillo</td>\n",
+       "      <td>MOVIE</td>\n",
+       "      <td>2021</td>\n",
+       "      <td>['comedy']</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>68.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>85577</th>\n",
+       "      <td>Isabel Gaona</td>\n",
+       "      <td>Cacica</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Lokillo</td>\n",
+       "      <td>MOVIE</td>\n",
+       "      <td>2021</td>\n",
+       "      <td>['comedy']</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>68.0</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "                      name                 character   role    title   type  \\\n",
+       "85569       Jessica Cediel           Liliana Navarro  ACTOR  Lokillo  MOVIE   \n",
+       "85570  Javier Gardeaz?­bal  Agust??n \"Peluca\" Ort??z  ACTOR  Lokillo  MOVIE   \n",
+       "85571        Carla Giraldo            Valery Reinoso  ACTOR  Lokillo  MOVIE   \n",
+       "85572  Ana Mar??a S?­nchez                   Lourdes  ACTOR  Lokillo  MOVIE   \n",
+       "85577         Isabel Gaona                    Cacica  ACTOR  Lokillo  MOVIE   \n",
+       "\n",
+       "       release_year      genres  imdb_score  imdb_votes  \n",
+       "85569          2021  ['comedy']         3.8        68.0  \n",
+       "85570          2021  ['comedy']         3.8        68.0  \n",
+       "85571          2021  ['comedy']         3.8        68.0  \n",
+       "85572          2021  ['comedy']         3.8        68.0  \n",
+       "85577          2021  ['comedy']         3.8        68.0  "
+      ]
+     },
+     "execution_count": 14,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "duplicate_rows = df[df.duplicated(keep=False)]\n",
+    "duplicate_rows.tail(5)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a1ed6640",
+   "metadata": {},
+   "source": [
+    "There are two clear duplicates in the printed rows. We can safely remove them.\n",
+    "Call the `pandas` method for getting rid of duplicate rows:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "724d5bc8",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>name</th>\n",
+       "      <th>character</th>\n",
+       "      <th>role</th>\n",
+       "      <th>title</th>\n",
+       "      <th>type</th>\n",
+       "      <th>release_year</th>\n",
+       "      <th>genres</th>\n",
+       "      <th>imdb_score</th>\n",
+       "      <th>imdb_votes</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>Robert De Niro</td>\n",
+       "      <td>Travis Bickle</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Taxi Driver</td>\n",
+       "      <td>MOVIE</td>\n",
+       "      <td>1976</td>\n",
+       "      <td>['drama', 'crime']</td>\n",
+       "      <td>8.2</td>\n",
+       "      <td>808582.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>Jodie Foster</td>\n",
+       "      <td>Iris Steensma</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Taxi Driver</td>\n",
+       "      <td>MOVIE</td>\n",
+       "      <td>1976</td>\n",
+       "      <td>['drama', 'crime']</td>\n",
+       "      <td>8.2</td>\n",
+       "      <td>808582.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>Albert Brooks</td>\n",
+       "      <td>Tom</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Taxi Driver</td>\n",
+       "      <td>MOVIE</td>\n",
+       "      <td>1976</td>\n",
+       "      <td>['drama', 'crime']</td>\n",
+       "      <td>8.2</td>\n",
+       "      <td>808582.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>Harvey Keitel</td>\n",
+       "      <td>Matthew 'Sport' Higgins</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Taxi Driver</td>\n",
+       "      <td>MOVIE</td>\n",
+       "      <td>1976</td>\n",
+       "      <td>['drama', 'crime']</td>\n",
+       "      <td>8.2</td>\n",
+       "      <td>808582.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>Cybill Shepherd</td>\n",
+       "      <td>Betsy</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Taxi Driver</td>\n",
+       "      <td>MOVIE</td>\n",
+       "      <td>1976</td>\n",
+       "      <td>['drama', 'crime']</td>\n",
+       "      <td>8.2</td>\n",
+       "      <td>808582.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>73854</th>\n",
+       "      <td>A??da Morales</td>\n",
+       "      <td>Maritza</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Lokillo</td>\n",
+       "      <td>the movie</td>\n",
+       "      <td>2021</td>\n",
+       "      <td>['comedy']</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>68.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>73855</th>\n",
+       "      <td>Adelaida Buscato</td>\n",
+       "      <td>Mar??a Paz</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Lokillo</td>\n",
+       "      <td>the movie</td>\n",
+       "      <td>2021</td>\n",
+       "      <td>['comedy']</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>68.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>73856</th>\n",
+       "      <td>Luz Stella Luengas</td>\n",
+       "      <td>Karen Bayona</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Lokillo</td>\n",
+       "      <td>the movie</td>\n",
+       "      <td>2021</td>\n",
+       "      <td>['comedy']</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>68.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>73857</th>\n",
+       "      <td>In??s Prieto</td>\n",
+       "      <td>Fanny</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Lokillo</td>\n",
+       "      <td>the movie</td>\n",
+       "      <td>2021</td>\n",
+       "      <td>['comedy']</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>68.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>73858</th>\n",
+       "      <td>Julian Gaviria</td>\n",
+       "      <td>unknown</td>\n",
+       "      <td>DIRECTOR</td>\n",
+       "      <td>Lokillo</td>\n",
+       "      <td>the movie</td>\n",
+       "      <td>2021</td>\n",
+       "      <td>['comedy']</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>68.0</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>73859 rows × 9 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "                     name                character      role        title  \\\n",
+       "0          Robert De Niro            Travis Bickle     ACTOR  Taxi Driver   \n",
+       "1            Jodie Foster            Iris Steensma     ACTOR  Taxi Driver   \n",
+       "2           Albert Brooks                      Tom     ACTOR  Taxi Driver   \n",
+       "3           Harvey Keitel  Matthew 'Sport' Higgins     ACTOR  Taxi Driver   \n",
+       "4         Cybill Shepherd                    Betsy     ACTOR  Taxi Driver   \n",
+       "...                   ...                      ...       ...          ...   \n",
+       "73854       A??da Morales                  Maritza     ACTOR      Lokillo   \n",
+       "73855    Adelaida Buscato               Mar??a Paz     ACTOR      Lokillo   \n",
+       "73856  Luz Stella Luengas             Karen Bayona     ACTOR      Lokillo   \n",
+       "73857        In??s Prieto                    Fanny     ACTOR      Lokillo   \n",
+       "73858      Julian Gaviria                  unknown  DIRECTOR      Lokillo   \n",
+       "\n",
+       "            type  release_year              genres  imdb_score  imdb_votes  \n",
+       "0          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+       "1          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+       "2          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+       "3          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+       "4          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+       "...          ...           ...                 ...         ...         ...  \n",
+       "73854  the movie          2021          ['comedy']         3.8        68.0  \n",
+       "73855  the movie          2021          ['comedy']         3.8        68.0  \n",
+       "73856  the movie          2021          ['comedy']         3.8        68.0  \n",
+       "73857  the movie          2021          ['comedy']         3.8        68.0  \n",
+       "73858  the movie          2021          ['comedy']         3.8        68.0  \n",
+       "\n",
+       "[73859 rows x 9 columns]"
+      ]
+     },
+     "execution_count": 15,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df_cleaned = df.drop_duplicates().reset_index(drop=True)\n",
+    "df_cleaned"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "eee67dd1",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-warning\">\n",
+    "<b>Reviewer's comment v1</b>\n",
+    "    \n",
+    "Note that it is also required additionally to re-create the indexes in your dataframe. To achieve that, you can use `reset_index()`.\n",
+    "    \n",
+    "Without that, the index column will not be ordinal anymore, as `drop_duplicates()` deleted some lines, hence the dataframe becomes less informative.\n",
+    "    \n",
+    "    \n",
+    "You can read about it here: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.reset_index.html\n",
+    "    \n",
+    "And parameter `drop=True` could be helpful to rewrite existent index instead of creating a second ordinal column."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fc8c77ba",
+   "metadata": {},
+   "source": [
+    "Check for duplicate rows once more to make sure you have removed all of them:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "8091a9bc",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "0\n"
+     ]
+    }
+   ],
+   "source": [
+    "duplicate_rows_after_removal = df_cleaned[df_cleaned.duplicated()]\n",
+    "print(len(duplicate_rows_after_removal))\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "42d17d4e",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-success\">\n",
+    "<b>Reviewer's comment v3</b>\n",
+    "    \n",
+    "Perfect! Duplicates have been correctly removed."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1d802b07",
+   "metadata": {},
+   "source": [
+    "Now get rid of implicit duplicates in the `'type'` column. For example, the string `'SHOW'` can be written in different ways. These kinds of errors will also affect the result."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d5f987ed",
+   "metadata": {},
+   "source": [
+    "Print a list of unique `'type'` names, sorted in alphabetical order. To do so:\n",
+    "* Retrieve the intended dataframe column \n",
+    "* Apply a sorting method to it\n",
+    "* For the sorted column, call the method that will return all unique column values"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "3d7b0ac5",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "['MOVIE' 'SHOW' 'movies' 'shows' 'the movie' 'tv' 'tv series' 'tv show'\n",
+      " 'tv shows']\n"
+     ]
+    }
+   ],
+   "source": [
+    "sorted_type = df['type'].sort_values()\n",
+    "unique_types = sorted_type.unique()\n",
+    "print(unique_types)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ac6e8b18",
+   "metadata": {},
+   "source": [
+    "Look through the list to find implicit duplicates of `'show'` (`'movie'` duplicates will be ignored since the assumption is about shows). These could be names written incorrectly or alternative names of the same genre.\n",
+    "\n",
+    "You will see the following implicit duplicates:\n",
+    "* `'shows'`\n",
+    "* `'SHOW'`\n",
+    "* `'tv show'`\n",
+    "* `'tv shows'`\n",
+    "* `'tv series'`\n",
+    "* `'tv'`\n",
+    "\n",
+    "To get rid of them, declare the function `replace_wrong_show()` with two parameters: \n",
+    "* `wrong_shows_list=` — the list of duplicates\n",
+    "* `correct_show=` — the string with the correct value\n",
+    "\n",
+    "The function should correct the names in the `'type'` column from the `df` table (i.e., replace each value from the `wrong_shows_list` list with the value in `correct_show`)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "bff944f9",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def replace_wrong_show(df, wrong_shows_list, correct_show):\n",
+    "    df['type'] = df['type'].replace(wrong_shows_list, correct_show)\n",
+    "    return df"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d02d13a6",
+   "metadata": {},
+   "source": [
+    "Call `replace_wrong_show()` and pass it arguments so that it clears implicit duplicates and replaces them with `SHOW`:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "a2217e53",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "wrong_shows_list = ['shows', 'SHOW', 'tv show', 'tv shows', 'tv series', 'tv']\n",
+    "correct_show = 'show'\n",
+    "df = replace_wrong_show(df, wrong_shows_list, correct_show)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "318b09f7",
+   "metadata": {},
+   "source": [
+    "Make sure the duplicate names are removed. Print the list of unique values from the `'type'` column:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "25d49d73",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "array(['MOVIE', 'the movie', 'show', 'movies'], dtype=object)"
+      ]
+     },
+     "execution_count": 20,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df['type'].unique()"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c2f69293",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-danger\">\n",
+    "<b>Reviewer's comment v2</b>\n",
+    "    \n",
+    "The IndentationError you're encountering is a common issue when coding in Python, particularly due to its strict enforcement of indentation to define code blocks. This error indicates that the lines of code are not aligned correctly, either with spaces or tabs, causing Python to be unable to understand the structure of your code properly.\n",
+    "    \n",
+    "    \n",
+    "However here we could define function in the following way: \n",
+    "    \n",
+    "```\n",
+    "def replace_wrong_show(wrong_shows_list,correct_show):\n",
+    "    for name in wrong_shows_list:\n",
+    "        df['type'] = df['type'].replace(name, correct_show)\n",
+    "```\n",
+    "    \n",
+    "Then you can specify lists with incorect and correct list of shows\n",
+    " \n",
+    "```\n",
+    "wrong_shows_list = ['shows', 'tv show', 'tv shows','tv shows','tv series', 'tv']\n",
+    "correct_show = 'SHOW'\n",
+    "```\n",
+    "    \n",
+    "After than you can call a function and view unique genre names\n",
+    "    \n",
+    "```\n",
+    "replace_wrong_show(wrong_shows_list, correct_show)\n",
+    "df['type'].unique()\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "783b5831",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-danger\">\n",
+    "<b>Reviewer's comment v1</b>\n",
+    "    \n",
+    "To replace values in the actual dataframe you need to apply this function to `df[type]` column in the following way: \n",
+    "    \n",
+    "```\n",
+    "def replace_wrong_show(df, wrong_shows_list, correct_show):\n",
+    "    df['type'] = df['type'].replace(wrong_shows_list, correct_show)\n",
+    "wrong_shows_list = ...\n",
+    "correct_show = ...\n",
+    "    \n",
+    "replace_wrong_show(df, wrong_shows_list, correct_show)\n",
+    "  \n",
+    "```\n",
+    "    \n",
+    "    \n",
+    "Please let me know if you have questions about this. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "7654cb0a",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-success\">\n",
+    "<b>Reviewer's comment v3</b>\n",
+    "    \n",
+    "As a second option you could use `isin()` for filtering: When replacing values in a DataFrame, using the `isin()` method can be more efficient, especially with a larger DataFrame. It allows for more precise selection of rows where the `type` column matches any value in the `wrong_shows_list`.\n",
+    "    \n",
+    "```\n",
+    "        # Replace values using isin()\n",
+    "        mask = df['type'].isin(wrong_shows_list)\n",
+    "        df.loc[mask, 'type'] = correct_show\n",
+    "```"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "18b2049e",
+   "metadata": {},
+   "source": [
+    "### Conclusions <a id='data_preprocessing_conclusions'></a>\n",
+    "We detected three issues with the data:\n",
+    "\n",
+    "- Incorrect header styles\n",
+    "- Missing values\n",
+    "- Duplicate rows and implicit duplicates\n",
+    "\n",
+    "The headers have been cleaned up to make processing the table simpler.\n",
+    "\n",
+    "All rows with missing values have been removed. \n",
+    "\n",
+    "The absence of duplicates will make the results more precise and easier to understand.\n",
+    "\n",
+    "Now we can move on to our analysis of the prepared data."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1aa0f1b1",
+   "metadata": {},
+   "source": [
+    "## Stage 3. Data analysis <a id='hypotheses'></a>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f8fb6a0e",
+   "metadata": {},
+   "source": [
+    "Based on the previous project stages, you can now define how the assumption will be checked. Calculate the average amount of votes for each score (this data is available in the `imdb_score` and `imdb_votes` columns), and then check how these averages relate to each other. If the averages for shows with the highest scores are bigger than those for shows with lower scores, the assumption appears to be true.\n",
+    "\n",
+    "Based on this, complete the following steps:\n",
+    "\n",
+    "- Filter the dataframe to only include shows released in 1999 or later.\n",
+    "- Group scores into buckets by rounding the values of the appropriate column (a set of 1-10 integers will help us make the outcome of our calculations more evident without damaging the quality of our research).\n",
+    "- Identify outliers among scores based on their number of votes, and exclude scores with few votes.\n",
+    "- Calculate the average votes for each score and check whether the assumption matches the results."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0ea2cb51",
+   "metadata": {},
+   "source": [
+    "To filter the dataframe and only include shows released in 1999 or later, you will take two steps. First, keep only titles published in 1999 or later in our dataframe. Then, filter the table to only contain shows (movies will be removed)."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "692f4470",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>name</th>\n",
+       "      <th>character</th>\n",
+       "      <th>role</th>\n",
+       "      <th>title</th>\n",
+       "      <th>type</th>\n",
+       "      <th>release_year</th>\n",
+       "      <th>genres</th>\n",
+       "      <th>imdb_score</th>\n",
+       "      <th>imdb_votes</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>Robert De Niro</td>\n",
+       "      <td>Travis Bickle</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Taxi Driver</td>\n",
+       "      <td>MOVIE</td>\n",
+       "      <td>1976</td>\n",
+       "      <td>['drama', 'crime']</td>\n",
+       "      <td>8.2</td>\n",
+       "      <td>808582.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>Jodie Foster</td>\n",
+       "      <td>Iris Steensma</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Taxi Driver</td>\n",
+       "      <td>MOVIE</td>\n",
+       "      <td>1976</td>\n",
+       "      <td>['drama', 'crime']</td>\n",
+       "      <td>8.2</td>\n",
+       "      <td>808582.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>Albert Brooks</td>\n",
+       "      <td>Tom</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Taxi Driver</td>\n",
+       "      <td>MOVIE</td>\n",
+       "      <td>1976</td>\n",
+       "      <td>['drama', 'crime']</td>\n",
+       "      <td>8.2</td>\n",
+       "      <td>808582.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>Harvey Keitel</td>\n",
+       "      <td>Matthew 'Sport' Higgins</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Taxi Driver</td>\n",
+       "      <td>MOVIE</td>\n",
+       "      <td>1976</td>\n",
+       "      <td>['drama', 'crime']</td>\n",
+       "      <td>8.2</td>\n",
+       "      <td>808582.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>Cybill Shepherd</td>\n",
+       "      <td>Betsy</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Taxi Driver</td>\n",
+       "      <td>MOVIE</td>\n",
+       "      <td>1976</td>\n",
+       "      <td>['drama', 'crime']</td>\n",
+       "      <td>8.2</td>\n",
+       "      <td>808582.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>...</th>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "      <td>...</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>73854</th>\n",
+       "      <td>A??da Morales</td>\n",
+       "      <td>Maritza</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Lokillo</td>\n",
+       "      <td>the movie</td>\n",
+       "      <td>2021</td>\n",
+       "      <td>['comedy']</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>68.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>73855</th>\n",
+       "      <td>Adelaida Buscato</td>\n",
+       "      <td>Mar??a Paz</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Lokillo</td>\n",
+       "      <td>the movie</td>\n",
+       "      <td>2021</td>\n",
+       "      <td>['comedy']</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>68.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>73856</th>\n",
+       "      <td>Luz Stella Luengas</td>\n",
+       "      <td>Karen Bayona</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Lokillo</td>\n",
+       "      <td>the movie</td>\n",
+       "      <td>2021</td>\n",
+       "      <td>['comedy']</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>68.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>73857</th>\n",
+       "      <td>In??s Prieto</td>\n",
+       "      <td>Fanny</td>\n",
+       "      <td>ACTOR</td>\n",
+       "      <td>Lokillo</td>\n",
+       "      <td>the movie</td>\n",
+       "      <td>2021</td>\n",
+       "      <td>['comedy']</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>68.0</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>73858</th>\n",
+       "      <td>Julian Gaviria</td>\n",
+       "      <td>unknown</td>\n",
+       "      <td>DIRECTOR</td>\n",
+       "      <td>Lokillo</td>\n",
+       "      <td>the movie</td>\n",
+       "      <td>2021</td>\n",
+       "      <td>['comedy']</td>\n",
+       "      <td>3.8</td>\n",
+       "      <td>68.0</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "<p>73859 rows × 9 columns</p>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "                     name                character      role        title  \\\n",
+       "0          Robert De Niro            Travis Bickle     ACTOR  Taxi Driver   \n",
+       "1            Jodie Foster            Iris Steensma     ACTOR  Taxi Driver   \n",
+       "2           Albert Brooks                      Tom     ACTOR  Taxi Driver   \n",
+       "3           Harvey Keitel  Matthew 'Sport' Higgins     ACTOR  Taxi Driver   \n",
+       "4         Cybill Shepherd                    Betsy     ACTOR  Taxi Driver   \n",
+       "...                   ...                      ...       ...          ...   \n",
+       "73854       A??da Morales                  Maritza     ACTOR      Lokillo   \n",
+       "73855    Adelaida Buscato               Mar??a Paz     ACTOR      Lokillo   \n",
+       "73856  Luz Stella Luengas             Karen Bayona     ACTOR      Lokillo   \n",
+       "73857        In??s Prieto                    Fanny     ACTOR      Lokillo   \n",
+       "73858      Julian Gaviria                  unknown  DIRECTOR      Lokillo   \n",
+       "\n",
+       "            type  release_year              genres  imdb_score  imdb_votes  \n",
+       "0          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+       "1          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+       "2          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+       "3          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+       "4          MOVIE          1976  ['drama', 'crime']         8.2    808582.0  \n",
+       "...          ...           ...                 ...         ...         ...  \n",
+       "73854  the movie          2021          ['comedy']         3.8        68.0  \n",
+       "73855  the movie          2021          ['comedy']         3.8        68.0  \n",
+       "73856  the movie          2021          ['comedy']         3.8        68.0  \n",
+       "73857  the movie          2021          ['comedy']         3.8        68.0  \n",
+       "73858  the movie          2021          ['comedy']         3.8        68.0  \n",
+       "\n",
+       "[73859 rows x 9 columns]"
+      ]
+     },
+     "execution_count": 21,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df_cleaned"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 29,
+   "id": "73a4c73b",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df_cleaned = df_cleaned[(df_cleaned['release_year'] >= 1999) & (df_cleaned['type'] == 'SHOW')]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b4c0c2c7",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-danger\">\n",
+    "<b>Reviewer's comment v1</b>\n",
+    "    \n",
+    "This section of the project needs to be updated after making changes based on the previous comments. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "520f3c78",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-success\">\n",
+    "<b>Reviewer's comment v3</b>\n",
+    "\n",
+    "You've filterd the data required data correctly. \n",
+    "\n",
+    "\n",
+    "Additionally there are other methods that could be helpful to filter your data, for example:`query()`.\n",
+    "\n",
+    "    \n",
+    "`df = df.query('type == \"SHOW\"')`\n",
+    "    \n",
+    "You can read about them additionally here: \n",
+    "https://towardsdatascience.com/10-examples-that-will-make-you-use-pandas-query-function-more-often-a8fb3e9361cb\n",
+    "https://towardsdatascience.com/how-to-use-loc-and-iloc-for-selecting-data-in-pandas-bd09cb4c3d79    "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 30,
+   "id": "128dc6a9",
+   "metadata": {
+    "scrolled": true
+   },
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "                      name character      role        title  type  \\\n",
+      "3636     Tracee Ellis Ross   unknown     ACTOR  Girlfriends  SHOW   \n",
+      "3637         Golden Brooks   unknown     ACTOR  Girlfriends  SHOW   \n",
+      "3638          Persia White   unknown     ACTOR  Girlfriends  SHOW   \n",
+      "3639          Reggie Hayes   unknown     ACTOR  Girlfriends  SHOW   \n",
+      "3640      Jill Marie Jones   unknown     ACTOR  Girlfriends  SHOW   \n",
+      "...                    ...       ...       ...          ...   ...   \n",
+      "73614     Maneerat Kam-Uan        Ae     ACTOR    Let's Eat  SHOW   \n",
+      "73615    Rudklao Amratisha   unknown     ACTOR    Let's Eat  SHOW   \n",
+      "73616      Jaturong Mokjok   unknown     ACTOR    Let's Eat  SHOW   \n",
+      "73617     Pisamai Wilaisak   unknown     ACTOR    Let's Eat  SHOW   \n",
+      "73618  Sarawut Wichiensarn   unknown  DIRECTOR    Let's Eat  SHOW   \n",
+      "\n",
+      "       release_year               genres  imdb_score  imdb_votes  score_bucket  \n",
+      "3636           2000  ['drama', 'comedy']         7.2      4528.0             7  \n",
+      "3637           2000  ['drama', 'comedy']         7.2      4528.0             7  \n",
+      "3638           2000  ['drama', 'comedy']         7.2      4528.0             7  \n",
+      "3639           2000  ['drama', 'comedy']         7.2      4528.0             7  \n",
+      "3640           2000  ['drama', 'comedy']         7.2      4528.0             7  \n",
+      "...             ...                  ...         ...         ...           ...  \n",
+      "73614          2021  ['drama', 'comedy']         8.2         5.0             8  \n",
+      "73615          2021  ['drama', 'comedy']         8.2         5.0             8  \n",
+      "73616          2021  ['drama', 'comedy']         8.2         5.0             8  \n",
+      "73617          2021  ['drama', 'comedy']         8.2         5.0             8  \n",
+      "73618          2021  ['drama', 'comedy']         8.2         5.0             8  \n",
+      "\n",
+      "[13330 rows x 10 columns]\n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "/tmp/ipykernel_81/2164444568.py:1: SettingWithCopyWarning: \n",
+      "A value is trying to be set on a copy of a slice from a DataFrame.\n",
+      "Try using .loc[row_indexer,col_indexer] = value instead\n",
+      "\n",
+      "See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\n",
+      "  df_cleaned['score_bucket'] = df_cleaned['imdb_score'].round().astype(int)\n"
+     ]
+    }
+   ],
+   "source": [
+    "df_cleaned['score_bucket'] = df_cleaned['imdb_score'].round().astype(int)\n",
+    "print(df_cleaned)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c3bb45fb",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-warning\">\n",
+    "<b>Reviewer's comment v3</b>\n",
+    "\n",
+    "There is a duplicate code above which could be removed. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9648040c",
+   "metadata": {},
+   "source": [
+    "The scores that are to be grouped should be rounded. For instance, titles with scores like 7.8, 8.1, and 8.3 will all be placed in the same bucket with a score of 8."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 35,
+   "id": "54bbd5c0",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "                      name character      role      title  type  release_year  \\\n",
+      "73614     Maneerat Kam-Uan        Ae     ACTOR  Let's Eat  SHOW          2021   \n",
+      "73615    Rudklao Amratisha   unknown     ACTOR  Let's Eat  SHOW          2021   \n",
+      "73616      Jaturong Mokjok   unknown     ACTOR  Let's Eat  SHOW          2021   \n",
+      "73617     Pisamai Wilaisak   unknown     ACTOR  Let's Eat  SHOW          2021   \n",
+      "73618  Sarawut Wichiensarn   unknown  DIRECTOR  Let's Eat  SHOW          2021   \n",
+      "\n",
+      "                    genres  imdb_score  imdb_votes  score_bucket  \n",
+      "73614  ['drama', 'comedy']           8         5.0             8  \n",
+      "73615  ['drama', 'comedy']           8         5.0             8  \n",
+      "73616  ['drama', 'comedy']           8         5.0             8  \n",
+      "73617  ['drama', 'comedy']           8         5.0             8  \n",
+      "73618  ['drama', 'comedy']           8         5.0             8  \n"
+     ]
+    },
+    {
+     "name": "stderr",
+     "output_type": "stream",
+     "text": [
+      "/tmp/ipykernel_81/1394167646.py:1: SettingWithCopyWarning: \n",
+      "A value is trying to be set on a copy of a slice from a DataFrame.\n",
+      "Try using .loc[row_indexer,col_indexer] = value instead\n",
+      "\n",
+      "See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy\n",
+      "  df_cleaned['imdb_score'] = df_cleaned['imdb_score'].round().astype(int)\n"
+     ]
+    }
+   ],
+   "source": [
+    "df_cleaned['imdb_score'] = df_cleaned['imdb_score'].round().astype(int)\n",
+    "print(df_cleaned.tail())\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "36dbd00a",
+   "metadata": {},
+   "source": [
+    "It is now time to identify outliers based on the number of votes."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 36,
+   "id": "b8b55e95",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "imdb_score\n",
+      "2                [137.0, 3333.0, 555.0, 2915.0, 3019.0]\n",
+      "3                        [1073.0, 750.0, 16.0, 10097.0]\n",
+      "4     [93.0, 885.0, 61.0, 28.0, 311.0, 625.0, 500.0,...\n",
+      "5     [2578.0, 8322.0, 6.0, 1930.0, 2642.0, 2538.0, ...\n",
+      "6     [15808.0, 17905.0, 6700.0, 4709.0, 12288.0, 34...\n",
+      "7     [4528.0, 2377.0, 4281.0, 24838.0, 38046.0, 178...\n",
+      "8     [956604.0, 434081.0, 122698.0, 25485.0, 257221...\n",
+      "9     [2399.0, 117240.0, 9856.0, 300445.0, 303666.0,...\n",
+      "10                                          [1775990.0]\n",
+      "Name: imdb_votes, dtype: object\n"
+     ]
+    }
+   ],
+   "source": [
+    "vote_counts_by_score = df_cleaned.groupby('imdb_score')['imdb_votes'].unique()\n",
+    "print(vote_counts_by_score)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "1ba6daae",
+   "metadata": {},
+   "source": [
+    "Based on the aggregation performed, it is evident that scores 2 (24 voted shows), 3 (27 voted shows), and 10 (only 8 voted shows) are outliers. There isn't enough data for these scores for the average number of votes to be meaningful."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bd468c46",
+   "metadata": {},
+   "source": [
+    "To obtain the mean numbers of votes for the selected scores (we identified a range of 4-9 as acceptable), use conditional filtering and grouping."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 37,
+   "id": "d1867e0e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "   imdb_score     imdb_votes\n",
+      "0           4    5296.553073\n",
+      "1           5    3159.726655\n",
+      "2           6    3503.104966\n",
+      "3           7    8701.014325\n",
+      "4           8   30323.097856\n",
+      "5           9  127101.043956\n"
+     ]
+    }
+   ],
+   "source": [
+    "filtered_data = df_cleaned[(df_cleaned['imdb_score'] >= 4) & (df_cleaned['imdb_score'] <= 9)]\n",
+    "\n",
+    "average_votes = filtered_data.groupby('imdb_score')['imdb_votes'].mean()\n",
+    "print(average_votes.reset_index())\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "96a66d14",
+   "metadata": {},
+   "source": [
+    "Now for the final step! Round the column with the averages, rename both columns, and print the dataframe in descending order."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 38,
+   "id": "5999051b",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "imdb_score\n",
+      "9    127101.0\n",
+      "8     30323.1\n",
+      "7      8701.0\n",
+      "6      3503.1\n",
+      "5      3159.7\n",
+      "4      5296.6\n",
+      "Name: Average Votes, dtype: float64\n"
+     ]
+    }
+   ],
+   "source": [
+    "filtered_data = df_cleaned[(df_cleaned['imdb_score'] >= 4) & (df_cleaned['imdb_score'] <= 9)]\n",
+    "average_votes = filtered_data.groupby('imdb_score')['imdb_votes'].mean()\n",
+    "average_votes = average_votes.round(1).rename('Average Votes').sort_index(ascending=False)\n",
+    "\n",
+    "print(average_votes)\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "af07386d",
+   "metadata": {},
+   "source": [
+    "The assumption macthes the analysis: the shows with the top 3 scores have the most amounts of votes."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ef9ddecd",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-success\">\n",
+    "<b>Reviewer's comment v3</b>\n",
+    "\n",
+    "Everything is correct here. "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "84e29a37",
+   "metadata": {},
+   "source": [
+    "## Conclusion <a id='hypotheses'></a>"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "984766a3",
+   "metadata": {},
+   "source": [
+    "The research done confirms that highly-rated shows released during the \"Golden Age\" of television also have the most votes. While shows with score 4 have more votes than ones with scores 5 and 6, the top three (scores 7-9) have the largest number. The data studied represents around 94% of the original set, so we can be confident in our findings."
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f6e6afce",
+   "metadata": {},
+   "source": [
+    "<div class=\"alert alert-success\">\n",
+    "<b>Reviewer's comment v3:</b>\n",
+    " \n",
+    "Overall you did a great research.\n",
+    "    \n",
+    "A small tip regarding overall conclusion in the project: \n",
+    "    It represents the overall work progress that you achieved. On a real project, this is probably the only thing the business will read. Therefore, it is crucial to indicate in a structured way all conclusions that you made on each step in the project.\n",
+    "\n",
+    "For example:\n",
+    "\n",
+    "- Replaced missing values in the following data with the following method.\n",
+    "- Replaced data types in the following columns.\n",
+    "- etc.\n",
+    "- We observe that ... factors impact ... \n",
+    "- My analysis show ...\n",
+    "- I can recommend the following next steps / activities ...\n",
+    "\n",
+    "It is also important to provide explanations and interpretations that will be interesting for business based on your analysis.\n",
+    "\n",
+    "</div>"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.19"
+  },
+  "toc": {
+   "base_numbering": 1,
+   "nav_menu": {},
+   "number_sections": true,
+   "sideBar": true,
+   "skip_h1_title": true,
+   "title_cell": "Table of Contents",
+   "title_sidebar": "Contents",
+   "toc_cell": false,
+   "toc_position": {},
+   "toc_section_display": true,
+   "toc_window_display": false
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
